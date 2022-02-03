@@ -1,0 +1,7 @@
+mss==6.1.0
+opencv_python==4.5.1.48
+numpy==1.19.3
+picamera
+urllib3==1.25.9
+picamera[array]
+
