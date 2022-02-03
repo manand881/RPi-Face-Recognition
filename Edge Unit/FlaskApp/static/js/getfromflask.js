@@ -1,5 +1,3 @@
-
-
 var person_name = ""
 var time = ""
 var dept = ""
@@ -24,7 +22,7 @@ setInterval(function () {
 
     if (buffer['name'] != "Empty") {
 
-        er['Gate']]
+
         person_name = buffer['name']
         time = buffer['time']
         dept = buffer['Department']
@@ -36,6 +34,5 @@ setInterval(function () {
             pervious_person_name = person_name
             pervious_time = time
         }
-
     }
 }, 300);
