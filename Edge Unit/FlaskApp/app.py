@@ -67,4 +67,5 @@ if __name__ == "__main__":
     print("[INFO]    Starting Flask Server...")
     print("[INFO]    Starting Face Recognition...")
     face_recognition_process, face_recognition_process_id = start_face_recognition_process()
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host='0.0.0.0', debug=True, port=5055)
+

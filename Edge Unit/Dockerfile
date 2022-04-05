@@ -44,5 +44,5 @@ WORKDIR /home/face_recognition/FlaskApp
 
 # run project
 
-EXPOSE 5000
+EXPOSE 5055
 CMD ["python3", "app.py"]
