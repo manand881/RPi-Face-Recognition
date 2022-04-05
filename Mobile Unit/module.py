@@ -49,7 +49,7 @@ def detect_device():
 def ping(ip):
     try:
         print("[INFO] Trying to connect to {}".format(ip), end="\r")
-        response = requests.get('http://'+ip+':5000/hello')
+        response = requests.get('http://'+ip+':5055/hello')
         if("Edge Unit" in response.text):
             print("\n[INFO]    Edge Unit found at {}".format(ip))
             return ip
@@ -92,7 +92,7 @@ def readedgeunitip():
 
 
 def post_frame_to_edgeunit(frame, ip):
-    url = 'http://'+ip+':5000/recognize'
+    url = 'http://'+ip+':5055/recognize'
     headers = {'Content-Type': 'application/octet-stream'}
     # print(type(frame),"framelen")
     # files = {'file': ('frame.jpg', frame)}
