@@ -1,16 +1,10 @@
 # flask app to recieve api call
-from email import message
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-from flask_sqlalchemy import SQLAlchemy
 # import face_recognition
 from module import *
 
 app = Flask(__name__, static_url_path='/static')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'the random string'
-# app.config["DEBUG"] = True
-db = SQLAlchemy(app)
 face_recognition_process = None
 face_recognition_process_id = None
 
