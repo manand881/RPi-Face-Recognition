@@ -22,19 +22,24 @@ RUN apt-get install -y libopenblas-dev
 RUN apt-get install -y liblapack-dev 
 RUN apt-get install -y libjpeg-dev
 RUN apt-get install ffmpeg -y
-RUN apt-get install -y --fix-missing \
-    build-essential \
-    gfortran \
-    graphicsmagick \
-    libgraphicsmagick1-dev \
-    libatlas-base-dev \
-    libavcodec-dev \
-    libavformat-dev \
-    libgtk2.0-dev \
-    libswscale-dev \
-    pkg-config \
-    software-properties-common \
-    zip
+RUN apt-get install -y --fix-missing
+RUN apt-get install -y build-essential
+RUN apt-get install -y gfortran
+RUN apt-get install -y graphicsmagick
+RUN apt-get install -y libgraphicsmagick1-dev
+RUN apt-get install -y libatlas-base-dev
+RUN apt-get install -y libavcodec-dev
+RUN apt-get install -y libavformat-dev
+RUN apt-get update
+RUN apt-get install -y --fix-missing
+RUN apt-get autoremove -y
+RUN apt-get clean 
+RUN apt-get install -y libglib2.0-dev
+RUN apt-get install -y libgtk2.0-dev
+RUN apt-get install -y libswscale-dev
+RUN apt-get install -y pkg-config
+RUN apt-get install -y software-properties-common
+RUN apt-get install -y zip
 
 # Downloading and building dlib
 
