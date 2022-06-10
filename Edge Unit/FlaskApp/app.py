@@ -20,6 +20,7 @@ face_recognition_process_id = None
 def index():
     return render_template('home.html')
 
+
 @app.route("/enroll")
 def enroll():
     return render_template('enroll.html', message="")
@@ -32,15 +33,14 @@ def about():
 
 @app.route("/enroll_face", methods=['POST'])
 def enroll_face():
-    if request.method == 'POST':  
+    if request.method == 'POST':
         f = request.files['file']
-        if(".png" not in f.filename):  
-            return render_template('enroll.html',message="Please Upload PNG File Only")
+        if(".png" not in f.filename):
+            return render_template('enroll.html', message="Please Upload PNG File Only")
         else:
-            # f.save(f.filename) 
+            # f.save(f.filename)
             save_new_face(f)
-        return render_template('enroll.html',message="Successfully enrolled")
-
+        return render_template('enroll.html', message="Successfully enrolled")
 
 
 @app.route('/hello', methods=['GET'])
@@ -68,4 +68,3 @@ if __name__ == "__main__":
     print("[INFO]    Starting Face Recognition...")
     face_recognition_process, face_recognition_process_id = start_face_recognition_process()
     app.run(host='0.0.0.0', debug=True, port=5055)
-
