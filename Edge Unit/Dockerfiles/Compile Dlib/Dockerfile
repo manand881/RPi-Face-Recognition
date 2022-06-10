@@ -75,8 +75,8 @@ WORKDIR /home/face_recognition
 # ADD FlaskApp FlaskApp/
 # WORKDIR /home/face_recognition/FlaskApp
 RUN git clone https://github.com/manand881/RPi-Face-Recognition.git
-RUN git pull
 WORKDIR /home/face_recognition/RPi-Face-Recognition/"Edge Unit"/FlaskApp
+RUN git pull
 
 # run project
 
