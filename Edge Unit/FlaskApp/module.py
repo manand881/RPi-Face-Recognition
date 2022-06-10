@@ -72,14 +72,15 @@ def knownimagesandencoginds(known_face_encodings, known_face_names):
     mypath = sys.path[0]+"/Faces"
     print(mypath)
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-    # print(onlyfiles)
     for files in onlyfiles:
-        # print(files)
-        image_path = os.path.join(mypath, files)
-        image_data = face_recognition.load_image_file(image_path)
-        image_face_encoding = face_recognition.face_encodings(image_data)[0]
-        known_face_encodings.append(image_face_encoding)
-        known_face_names.append(files.split('.')[0])
+        try:
+            image_path = os.path.join(mypath, files)
+            image_data = face_recognition.load_image_file(image_path)
+            image_face_encoding = face_recognition.face_encodings(image_data)[0]
+            known_face_encodings.append(image_face_encoding)
+            known_face_names.append(files.split('.')[0])
+        except:
+            pass
     return known_face_encodings, known_face_names
 
 
